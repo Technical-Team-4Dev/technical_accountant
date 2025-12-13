@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="شروط الخدمة - تطبيق المحاسب التقني">
+    <title>شروط الخدمة - المحاسب التقني</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Arial';
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .intro {
+            background: #f8f9fa;
+            border-right: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            color: #555;
+            margin: 0;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.05em;
+            color: #444;
+        }
+
+        ul {
+            margin: 15px 0 15px 30px;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-right: 10px;
+            line-height: 1.8;
+            color: #555;
+            position: relative;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            right: -20px;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-right: 4px solid #667eea;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+            text-align: center;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            color: #ecf0f1;
+            text-align: center;
+        }
+
+        .last-updated {
+            color: #95a5a6;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            body {
+                padding: 10px;
+            }
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to left, transparent, #ddd, transparent);
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>شروط الخدمة</h1>
+            <p>تطبيق المحاسب التقني</p>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <p>
+                    مرحباً بك في تطبيق المحاسب التقني. يرجى قراءة شروط الخدمة هذه بعناية قبل استخدام التطبيق. 
+                    باستخدامك للتطبيق، أنت توافق على الالتزام بهذه الشروط والأحكام.
+                </p>
+            </div>
+
+            <h2>1. قبول الشروط</h2>
+            <p>
+                من خلال الوصول إلى تطبيق المحاسب التقني واستخدامه، فإنك تقر بأنك قد قرأت وفهمت ووافقت على الالتزام 
+                بهذه الشروط والأحكام وجميع القوانين واللوائح المعمول بها. إذا كنت لا توافق على أي من هذه الشروط، 
+                فيجب عليك عدم استخدام التطبيق.
+            </p>
+
+            <h2>2. وصف الخدمة</h2>
+            <p>
+                تطبيق المحاسب التقني يوفر أدوات وأدوات محاسبية شاملة لإدارة الحسابات المالية، وإنشاء التقارير، 
+                وإدارة العملاء، والمزامنة مع السحابة. نحن نحتفظ بالحق في تعديل أو تعليق أو إيقاف أي جزء من الخدمة 
+                في أي وقت دون إشعار مسبق.
+            </p>
+
+            <div class="highlight-box">
+                <p>
+                    <strong>ملاحظة هامة:</strong> نحن نحتفظ بالحق في تحديث التطبيق وإضافة ميزات جديدة أو إزالة 
+                    ميزات موجودة في أي وقت لتحسين تجربة المستخدم.
+                </p>
+            </div>
+
+            <h2>3. حساب المستخدم والمسؤولية</h2>
+            <h3>3.1 إنشاء الحساب</h3>
+            <p>
+                لاستخدام بعض ميزات التطبيق، قد تحتاج إلى إنشاء حساب. أنت مسؤول عن:
+            </p>
+            <ul>
+                <li>الحفاظ على سرية معلومات حسابك وكلمة المرور</li>
+                <li>جميع الأنشطة التي تحدث تحت حسابك</li>
+                <li>إبلاغنا فوراً بأي استخدام غير مصرح به لحسابك</li>
+            </ul>
+
+            <h3>3.2 دقة المعلومات</h3>
+            <p>
+                أنت توافق على تقديم معلومات دقيقة وصحيحة ومحدثة عند إنشاء حسابك واستخدام التطبيق. 
+                نحن لسنا مسؤولين عن أي أخطاء أو أضرار ناتجة عن معلومات غير دقيقة.
+            </p>
+
+            <h2>4. استخدام التطبيق</h2>
+            <h3>4.1 الاستخدام المسموح</h3>
+            <p>يُسمح لك باستخدام التطبيق للأغراض القانونية فقط. يجب عليك:</p>
+            <ul>
+                <li>استخدام التطبيق وفقاً لجميع القوانين واللوائح المعمول بها</li>
+                <li>عدم استخدام التطبيق لأي غرض غير قانوني أو ضار</li>
+                <li>عدم محاولة اختراق أو تعطيل التطبيق أو خوادمه</li>
+                <li>عدم نسخ أو تعديل أو توزيع أي جزء من التطبيق بدون إذن</li>
+            </ul>
+
+            <h3>4.2 الاستخدام المحظور</h3>
+            <p>يحظر عليك:</p>
+            <ul>
+                <li>استخدام التطبيق بطريقة تنتهك أي قوانين محلية أو دولية</li>
+                <li>إرسال أو نشر أي محتوى ضار أو خبيث أو غير قانوني</li>
+                <li>محاولة الحصول على وصول غير مصرح به إلى أنظمتنا</li>
+                <li>استخدام التطبيق لإلحاق الضرر بأي شخص أو كيان</li>
+            </ul>
+
+            <div class="section-divider"></div>
+
+            <h2>5. البيانات والمزامنة</h2>
+            <h3>5.1 ملكية البيانات</h3>
+            <p>
+                جميع البيانات التي تدخلها في التطبيق ملك لك. نحن لا نملك أو نتحكم في محتوى بياناتك. 
+                أنت تحتفظ بجميع الحقوق في بياناتك.
+            </p>
+
+            <h3>5.2 النسخ الاحتياطي والمزامنة</h3>
+            <p>
+                يوفر التطبيق خيارات للنسخ الاحتياطي والمزامنة مع خدمات السحابة. أنت مسؤول عن:
+            </p>
+            <ul>
+                <li>الاحتفاظ بنسخ احتياطية من بياناتك</li>
+                <li>حماية أمان حسابات السحابة المرتبطة</li>
+                <li>فهم شروط الخدمة لخدمات الطرف الثالث المستخدمة للمزامنة</li>
+            </ul>
+
+            <h2>6. الخصوصية</h2>
+            <p>
+                نحن نلتزم بحماية خصوصيتك. يرجى مراجعة سياسة الخصوصية الخاصة بنا لفهم كيفية جمع 
+                واستخدام وحماية معلوماتك الشخصية.
+            </p>
+
+            <h2>7. المدفوعات والاشتراكات</h2>
+            <p>
+                قد تتطلب بعض ميزات التطبيق اشتراكاً أو دفعة. في حالة وجود اشتراكات:
+            </p>
+            <ul>
+                <li>جميع الأسعار معروضة بوضوح قبل الدفع</li>
+                <li>الاشتراكات تتجدد تلقائياً ما لم يتم إلغاؤها</li>
+                <li>يمكنك إلغاء الاشتراك في أي وقت</li>
+                <li>المدفوعات غير قابلة للاسترداد إلا في حالات محددة بموجب القانون</li>
+            </ul>
+
+            <div class="section-divider"></div>
+
+            <h2>8. الملكية الفكرية</h2>
+            <p>
+                تطبيق المحاسب التقني ومواده محمية بحقوق النشر والعلامات التجارية وغيرها من قوانين الملكية الفكرية. 
+                أنت لا تحصل على أي حقوق ملكية في التطبيق أو محتواه باستخدامك للخدمة.
+            </p>
+
+            <h2>9. إخلاء المسؤولية</h2>
+            <div class="highlight-box">
+                <p>
+                    <strong>التطبيق يوفر "كما هو" و"حسب التوفر".</strong> نحن لا نضمن أن التطبيق سيعمل بدون 
+                    انقطاع أو أخطاء، أو أن أي عيوب سيتم تصحيحها. نحن لسنا مسؤولين عن أي خسائر أو أضرار 
+                    ناتجة عن استخدام أو عدم القدرة على استخدام التطبيق.
+                </p>
+            </div>
+
+            <h2>10. حد المسؤولية</h2>
+            <p>
+                في الحد الأقصى المسموح به بموجب القانون، لن نكون مسؤولين عن أي أضرار غير مباشرة أو عرضية 
+                أو تبعية أو خاصة أو نموذجية أو عقابية ناتجة عن استخدامك للتطبيق أو عدم القدرة على استخدامه.
+            </p>
+
+            <h2>11. التعديلات على الشروط</h2>
+            <p>
+                نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سنقوم بإشعارك بأي تغييرات جوهرية من خلال التطبيق 
+                أو عبر البريد الإلكتروني. استمرار استخدامك للتطبيق بعد التعديلات يعني قبولك للشروط المحدثة.
+            </p>
+
+            <h2>12. إنهاء الخدمة</h2>
+            <p>
+                نحتفظ بالحق في تعليق أو إنهاء وصولك إلى التطبيق في أي وقت، مع أو بدون سبب، مع أو بدون إشعار، 
+                خاصة في حالة انتهاكك لشروط الخدمة هذه.
+            </p>
+
+            <h2>13. القانون الحاكم</h2>
+            <p>
+                تخضع هذه الشروط وتفسر وفقاً لقوانين [دولة/منطقة]، دون اعتبار لمبادئ تعارض القوانين. 
+                أي نزاع ينشأ عن هذه الشروط سيخضع للولاية القضائية الحصرية للمحاكم في [المدينة/البلد].
+            </p>
+
+            <div class="section-divider"></div>
+
+            <h2>14. الاتصال بنا</h2>
+            <div class="contact-info">
+                <h3>للاستفسارات أو الأسئلة</h3>
+                <p>إذا كانت لديك أي أسئلة حول شروط الخدمة هذه، يرجى الاتصال بنا:</p>
+                <p><strong>البريد الإلكتروني:</strong> support@technicalaccountant.com</p>
+                <p><strong>الهاتف:</strong> +964 777 181 625</p>
+                <p><strong>الواتساب:</strong> 777181625</p>
+            </div>
+
+            <div class="last-updated">
+                <p>آخر تحديث: ديسمبر 2024</p>
+                <p>© 2024 المحاسب التقني. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 تطبيق المحاسب التقني</p>
+            <p>جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+</body>
+</html>
+
