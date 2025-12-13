@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تطبيق المحاسب التقني - حل شامل لإدارة الحسابات المالية والمحاسبة">
+    <meta name="keywords" content="محاسبة, تطبيق محاسبة, إدارة مالية, تقارير مالية, المحاسب التقني">
+    <title>المحاسب التقني - تطبيق إدارة الحسابات المالية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Arial';
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 30px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: slideDown 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            animation: slideUp 1s ease-out;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 80px 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 30px;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 2;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        /* Download Section */
+        .download {
+            background: white;
+            padding: 80px 30px;
+            text-align: center;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .download-btn {
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 30px;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .contact-item p {
+            margin: 8px 0;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #667eea;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a252f;
+            color: #ecf0f1;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Icons */
+        .icon {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">📊 المحاسب التقني</div>
+            <ul class="nav-links">
+                <li><a href="#features">الميزات</a></li>
+                <li><a href="#about">عن التطبيق</a></li>
+                <li><a href="#download">تحميل</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>المحاسب التقني</h1>
+            <p>حل شامل ومتطور لإدارة الحسابات المالية والمحاسبة</p>
+            <div class="cta-buttons">
+                <a href="#download" class="btn btn-primary">ابدأ الآن</a>
+                <a href="#features" class="btn btn-secondary">اكتشف الميزات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">ميزات التطبيق</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>إدارة الحسابات</h3>
+                    <p>نظام شامل لإدارة جميع حساباتك المالية بسهولة ودقة عالية</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>تقارير تفصيلية</h3>
+                    <p>إنشاء تقارير مالية يومية وشهرية مع إمكانية التصدير والطباعة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>إدارة العملاء</h3>
+                    <p>تنظيم وإدارة بيانات عملائك ومتابعة معاملاتهم بسهولة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>مزامنة السحابة</h3>
+                    <p>نسخ احتياطي تلقائي ومزامنة بياناتك مع Google Drive</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>نسخ احتياطي محلي</h3>
+                    <p>إنشاء واستعادة النسخ الاحتياطية المحلية بسهولة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>واجهة سهلة</h3>
+                    <p>تصميم بسيط وحديث يسهل التعامل مع جميع الميزات</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>أمان عالي</h3>
+                    <p>حماية قوية لبياناتك المالية مع تشفير متقدم</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>تقارير Excel</h3>
+                    <p>تصدير البيانات والتقارير بصيغة Excel للتحليل المتقدم</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>طباعة PDF</h3>
+                    <p>إنشاء وطباعة التقارير بصيغة PDF مع إمكانية المشاركة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">مستخدم نشط</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">معاملة محاسبية</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">رضا العملاء</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">دعم فني</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="section-title">عن التطبيق</h2>
+            <p>
+                تطبيق المحاسب التقني هو الحل الأمثل للمحاسبين والأفراد الذين يبحثون عن نظام متكامل 
+                لإدارة حساباتهم المالية. صُمم التطبيق لتسهيل عمليات المحاسبة اليومية وإنشاء التقارير 
+                المالية بسهولة ودقة.
+            </p>
+            <p>
+                مع واجهة سهلة الاستخدام وميزات قوية، يمكنك إدارة جميع عملياتك المالية في مكان واحد. 
+                سواء كنت محاسباً محترفاً أو صاحب عمل صغير، سيساعدك تطبيق المحاسب التقني على تنظيم 
+                أمورك المالية بكفاءة عالية.
+            </p>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <h2 class="section-title">حمّل التطبيق الآن</h2>
+            <p style="font-size: 1.2em; color: #666; margin-bottom: 40px;">
+                متوفر الآن على متجر Google Play
+            </p>
+            <div class="download-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.technicalaccountant" class="download-btn" target="_blank">
+                    <span>📱</span>
+                    <span>Google Play</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 class="section-title" style="color: white;">تواصل معنا</h2>
+            <p style="font-size: 1.2em; margin-bottom: 40px;">
+                نحن هنا لمساعدتك! إذا كان لديك أي استفسار أو تحتاج إلى دعم فني، لا تتردد في التواصل معنا.
+            </p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>📧 البريد الإلكتروني</h3>
+                    <p><a href="mailto:support@technicalaccountant.com">support@technicalaccountant.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📱 الهاتف</h3>
+                    <p><a href="tel:+964777181625">+964 777 181 625</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>💬 الواتساب</h3>
+                    <p><a href="https://wa.me/964777181625" target="_blank">777181625</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">الصفحة الرئيسية</a>
+            <a href="terms-of-service.html">شروط الخدمة</a>
+            <a href="https://technical-team-4dev.github.io/privacy-policy/">سياسة الخصوصية</a>
+        </div>
+        <p>© 2024 المحاسب التقني. جميع الحقوق محفوظة.</p>
+        <p>تم التطوير بعناية لخدمة المحاسبين والأفراد</p>
+    </footer>
+</body>
+</html>
+
